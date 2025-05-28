@@ -1,4 +1,4 @@
-### Hi there 👋
+### huh
 
 <!--
 **xk0fe/xk0fe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,5 +14,3 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=xk0fe&theme=transparent&hide_border=true)](https://git.io/streak-stats)
