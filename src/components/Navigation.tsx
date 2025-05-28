@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          My Website
+          k0fe
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">

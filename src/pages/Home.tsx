@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import logo from '../logo.svg';
 import './Home.css';
+import CareerTimeline from '../components/CareerTimeline';
 
 const Home: React.FC = () => {
   return (
@@ -9,9 +10,9 @@ const Home: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <img src={logo} className="hero-logo" alt="logo" />
-          <h1>Welcome to My Website</h1>
+          <h1>About me</h1>
           <p className="hero-description">
-            A modern React application built with TypeScript and best practices.
+            A modern game developer built with felash and bones.
           </p>
           <div className="hero-actions">
             <a
@@ -51,6 +52,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <CareerTimeline />
     </div>
   );
 };
