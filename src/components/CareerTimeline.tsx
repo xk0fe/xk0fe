@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './CareerTimeline.css';
+import { logos } from '../assets/images/logos';
 
 interface Project {
   name: string;
@@ -22,27 +23,24 @@ interface CompanyStep {
   positions: Position[];
   icon: string;
   totalDuration: string;
+  logoKey?: string;
+  customLogoBackground?: string;
 }
 
 const careerData: CompanyStep[] = [
   {
     id: 1,
-    company: "Tech Startup Inc.",
-    totalDuration: "2020 - 2022",
+    company: "Green Button Games",
+    totalDuration: "2019 - 2021",
     icon: "🎮",
+    logoKey: "greenButtonGames",
     positions: [
       {
-        position: "Junior Game Developer",
-        duration: "2020 - 2021",
+        position: "Unity Game Developer",
+        duration: "2019 - 2020",
         description: "Started my journey in game development, working on mobile games and learning the fundamentals.",
         skills: ["Unity", "C#", "Mobile Development", "Version Control"],
         projects: [
-          {
-            name: "Idle Fish tycoon",
-            icon: "https://play-lh.googleusercontent.com/lR4mfEI50hA2WQmKtI347YypAxc-JyGfj7IQLy78XHbA5ZOUB2BkhZUnnJLy5Z4FDg=s48-rw",
-            link: "https://play.google.com/store/apps/details?id=com.greenbuttongames.FishIdle&hl=en_US&gl=US",
-            description: "Hybrid casual game with idle and tycoon elements"
-          },
           {
             name: "Runner Adventure",
             icon: "🏃",
@@ -52,54 +50,72 @@ const careerData: CompanyStep[] = [
         ]
       },
       {
-        position: "Middle Game Developer",
-        duration: "2021 - 2022",
+        position: "Unity Lead Game Developer",
+        duration: "2020 - 2021",
         description: "Progressed to more complex projects, took on mentoring responsibilities and improved game monetization systems.",
-        skills: ["Advanced Unity", "Mentoring", "Game Analytics", "Monetization Systems"],
+        skills: ["Team Leadership", "Mentoring", "Game Analytics", "Monetization Systems"],
         projects: [
-          {
-            name: "Enhanced Fish Tycoon",
-            icon: "🐟",
-            link: "https://example.com/enhanced-fish-tycoon",
-            description: "Major update with new features and improved monetization"
-          }
+            {
+                name: "Idle Fish tycoon",
+                icon: "https://play-lh.googleusercontent.com/lR4mfEI50hA2WQmKtI347YypAxc-JyGfj7IQLy78XHbA5ZOUB2BkhZUnnJLy5Z4FDg=s48-rw",
+                link: "https://play.google.com/store/apps/details?id=com.greenbuttongames.FishIdle&hl=en_US&gl=US",
+                description: "Hybrid casual game with idle and tycoon elements"
+            }
         ]
       }
     ]
   },
   {
     id: 2,
-    company: "GameStudio Pro",
-    totalDuration: "2022 - 2023",
+    company: "Balagur Games",
+    totalDuration: "2021 - 2022",
     icon: "🚀",
+    logoKey: "balagurGames",
     positions: [
       {
-        position: "Game Developer",
-        duration: "2022 - 2023",
+        position: "Unity Game Developer",
+        duration: "2021 - 2022",
         description: "Developed complex gameplay mechanics and optimized performance for various platforms.",
-        skills: ["Advanced Unity", "Performance Optimization", "Multiplayer Systems", "Shader Programming"],
+        skills: ["Firebase", "iOS", "Android", "Unity"],
         projects: [
           {
-            name: "Space Combat Arena",
+            name: "dOOdes: fun auto chess battler",
             icon: "🚀",
             link: "https://example.com/space-combat",
-            description: "Multiplayer space shooter with custom physics"
+            description: "Strategy auto battler"
           }
         ]
       }
     ]
   },
   {
-    id: 3,
-    company: "Innovation Games",
-    totalDuration: "2023 - Present",
+    id: 4,
+    company: "ChillBase",
+    totalDuration: "2022 - 2024",
     icon: "⭐",
+    logoKey: "chillbase",
+    customLogoBackground: "#000000",
     positions: [
       {
-        position: "Senior Game Developer",
-        duration: "2023 - Present",
+        position: "Software Developer",
+        duration: "2022 - 2024",
+        description: "Developed client side features for a golf course simulator using Unity and React Native",
+        skills: [".NET Core", "SQL", "MariaDB", "Prometheus", "Docker"]
+      }
+    ]
+  },
+  {
+    id: 5,
+    company: "Golf Daddy",
+    totalDuration: "2024 - Present",
+    icon: "⭐",
+    logoKey: "golfDaddy",
+    positions: [
+      {
+        position: "Unity Developer",
+        duration: "2024 - Present",
         description: "Leading development teams and architecting scalable game systems for AAA projects.",
-        skills: ["Team Leadership", "System Architecture", "Cross-platform Development", "AI Implementation"]
+        skills: ["React Native", "TypeScript", "AR"]
       }
     ]
   }
@@ -157,14 +173,26 @@ const CareerTimeline: React.FC = () => {
                   hasMultiplePositions ? 'multi-position-company' : 'single-position-company'
                 }`}
               >
-                <div className="timeline-marker">
-                  <span className="timeline-icon">{company.icon}</span>
-                  {hasMultiplePositions && <div className="progression-indicator">{company.positions.length}</div>}
-                </div>
                 <div className="timeline-content">
                   <div className="timeline-card">
                     <div className="company-header">
-                      <h3>{company.company}</h3>
+                      <div className="company-title">
+                        {company.logoKey && (
+                          <img 
+                            src={logos[company.logoKey].src} 
+                            alt={logos[company.logoKey].alt || `${company.company} logo`}
+                            className={`company-logo ${
+                              logos[company.logoKey].aspectRatio ? 
+                              `${logos[company.logoKey].aspectRatio}-logo` : 
+                              'square-logo'
+                            } ${logos[company.logoKey].className || ''}`}
+                            style={{
+                              backgroundColor: company.customLogoBackground || "#ffffff"
+                            }}
+                          />
+                        )}
+                        <h3>{company.company}</h3>
+                      </div>
                       <span className="company-duration">{company.totalDuration}</span>
                       {hasMultiplePositions && (
                         <div className="progression-badge">
