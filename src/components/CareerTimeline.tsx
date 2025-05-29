@@ -39,7 +39,7 @@ const careerData: CompanyStep[] = [
         position: "Unity",
         duration: "2013 - 2019",
         description: "Developed multiple mobile games. Finished with an open source platformer game for the Android platform using Unity",
-        skills: ["C#", "JavaScript", "Unity", "Android", "Firebase", "Google Play Services", "Photon"],
+        skills: ["C#", "JavaScript", "Unity", "Android", "Firebase", "Google Play Services", "Photon", "Version Control"],
         projects: [
           {
             name: "Super Tap Hero",
@@ -154,11 +154,11 @@ const careerData: CompanyStep[] = [
           position: "Unity Lead Game Developer",
           duration: "2020 - 2021",
           description: "Progressed to more complex projects, took on mentoring responsibilities and improved game monetization systems.",
-          skills: ["Team Leadership", "Mentoring", "Game Analytics", "Monetization Systems"],
+          skills: ["Team Leadership", "Mentoring", "Unity Analytics", "Facebook Analytics", "Game Analytics", "IronSource", "Monetization Systems", "ECS"],
           projects: [
               {
                   name: "Idle Fish Tycoon",
-                  icon: "https://play-lh.googleusercontent.com/lR4mfEI50hA2WQmKtI347YypAxc-JyGfj7IQLy78XHbA5ZOUB2BkhZUnnJLy5Z4FDg=s48-rw",
+                  icon: gameIcons.idlefish_icon,
                   link: "https://play.google.com/store/apps/details?id=com.greenbuttongames.FishIdle&hl=en_US&gl=US",
                   description: "Hybrid casual game with idle and tycoon elements"
               },
@@ -173,14 +173,32 @@ const careerData: CompanyStep[] = [
       {
         position: "Unity Game Developer",
         duration: "2019 - 2020",
-        description: "Started my journey in game development, working on mobile games and learning the fundamentals.",
-        skills: ["Unity", "C#", "Mobile Development", "Version Control"],
+        description: "Started my commercial career in game development. Insanely fast paced environment, making me learn a lot of things fast.",
+        skills: ["Unity", "C#", "iOS", "Android", "Xcode", "Android Studio"],
         projects: [
           {
-            name: "Runner Adventure",
+            name: "Brick Building Puzzle Game",
+            icon: "🧩",
+            link: "",
+            description: "Brick building puzzle game"
+          },
+          {
+            name: "Physics Based Olympic Runner Game",
             icon: "🏃",
-            link: "https://example.com/runner-adventure",
+            link: "",
             description: "Endless runner with power-ups and challenges"
+          },
+          {
+            name: "Blacksmith Simulator",
+            icon: "⚒️",
+            link: "",
+            description: "Smelter ore and craft items"
+          },
+          {
+            name: "Hyper Casual Tower Defense Game",
+            icon: "🛡️",
+            link: "",
+            description: "Protecc 🌍 from 👽"
           }
         ]
       }
@@ -196,12 +214,12 @@ const careerData: CompanyStep[] = [
       {
         position: "Unity Game Developer",
         duration: "2021 - 2022",
-        description: "Developed complex gameplay mechanics and optimized performance for various platforms.",
-        skills: ["Firebase", "iOS", "Android", "Unity"],
+        description: "Worked in a team of 4 people to develop a mobile auto battler game",
+        skills: ["Firebase", "iOS", "Android", "Unity", "ECS"],
         projects: [
           {
             name: "dOOdes: fun auto chess battler",
-            icon: "🚀",
+            icon: gameIcons.doodes_icon,
             link: "https://example.com/space-combat",
             description: "Strategy auto battler"
           }
@@ -210,7 +228,7 @@ const careerData: CompanyStep[] = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     company: "ChillBase",
     totalDuration: "2022 - 2024",
     icon: "⭐",
@@ -220,13 +238,21 @@ const careerData: CompanyStep[] = [
       {
         position: "Software Developer",
         duration: "2022 - 2024",
-        description: "Developed client side features for a golf course simulator using Unity and React Native",
-        skills: [".NET Core", "SQL", "MariaDB", "Prometheus", "Docker"]
+        description: "Developed client & server side features for a massive multiplayer roleplay game",
+        skills: [".NET Core", "SQL", "MariaDB", "Prometheus", "Docker", "TeamCity", "ECS"],
+        projects: [
+          {
+            name: "One State RP",
+            icon: gameIcons.onestate_icon,
+            link: "https://play.google.com/store/apps/details?id=com.Chillgaming.oneState&hl=pt_BR",
+            description: "Open World Multiplayer Roleplay"
+          }
+        ]
       }
     ]
   },
   {
-    id: 5,
+    id: 4,
     company: "Golf Daddy",
     totalDuration: "2024 - Present",
     icon: "⭐",
@@ -235,7 +261,7 @@ const careerData: CompanyStep[] = [
       {
         position: "Unity Developer",
         duration: "2024 - Present",
-        description: "Leading development teams and architecting scalable game systems for AAA projects.",
+        description: "Developed client side features for a golf course simulator using Unity and React Native",
         skills: ["Unity", "C#", "React Native", "TypeScript", "AR"]
       }
     ]
