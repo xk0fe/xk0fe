@@ -2,9 +2,9 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main, gh-pages ]
+    branches: [ source ]
   pull_request:
-    branches: [ main ]
+    branches: [ source ]
   workflow_dispatch:
 
 jobs:
