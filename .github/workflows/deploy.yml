@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, gh-pages ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -11,6 +11,7 @@ jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+    environment: gh-pages  # This tells GitHub to use the gh-pages environment secrets
     
     steps:
       - name: Checkout 🛎️
@@ -28,7 +29,7 @@ jobs:
       - name: Build Application 🔨
         run: npm run build
         env:
-          # EmailJS configuration from GitHub Secrets
+          # EmailJS configuration from GitHub Environment Secrets
           REACT_APP_EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           REACT_APP_EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
           REACT_APP_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
