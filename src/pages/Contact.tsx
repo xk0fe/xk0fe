@@ -56,8 +56,7 @@ const Contact: React.FC = () => {
       const response = await emailjs.send(
         serviceId,
         templateId,
-        templateParams,
-        publicKey
+        templateParams
       );
 
       console.log('Email sent successfully:', response);
