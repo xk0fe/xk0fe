@@ -11,7 +11,7 @@ jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-    environment: gh-pages  # This tells GitHub to use the gh-pages environment secrets
+    environment: github-pages # This tells GitHub to use the github-pages environment secrets
     
     steps:
       - name: Checkout 🛎️
