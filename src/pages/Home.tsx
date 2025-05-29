@@ -12,16 +12,16 @@ const Home: React.FC = () => {
           <img src={logo} className="hero-logo" alt="logo" />
           <h1>About me</h1>
           <p className="hero-description">
-            A modern game developer built with flesh and bones.
+            hey im k0fe and ive been making games for a long time now
           </p>
           <div className="hero-actions">
             <a
               className="btn btn-primary"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
+              // href="https://reactjs.org"
+              // target="_blank"
+              // rel="noopener noreferrer"
             >
-              Learn React
+              Projects (soon)
             </a>
             <Link
               className="btn btn-secondary"
@@ -35,15 +35,15 @@ const Home: React.FC = () => {
       
       <section className="features">
         <div className="container">
-          <h2>😎😎😎</h2>
+          <h2>Flex Points</h2>
           <div className="features-grid">
             <div className="feature-card">
-              <h3>15 years of game development</h3>
-              <p>From 2D games for GameBoy to 3D games for PC.</p>
+              <h3>15 years making games</h3>
+              <p>From 2D games for Nintendo DS to 3D VR experiences</p>
             </div>
             <div className="feature-card">
-              <h3>5 years of commercial experience</h3>
-              <p>Small startups, big companies, deadlines, teams,.</p>
+              <h3>6 years of commercial experience</h3>
+              <p>Small startups, big companies, deadlines, teams, etc.</p>
             </div>
             <div className="feature-card">
               <h3>15+ shipped games</h3>

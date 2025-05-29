@@ -355,7 +355,7 @@ const CareerTimeline: React.FC = () => {
                             <h4>{position.position}</h4>
                             <span className="position-duration">{position.duration}</span>
                             {hasMultiplePositions && positionIndex > 0 && (
-                              <div className="promotion-arrow">↗️</div>
+                              <div className="promotion-arrow">↑</div>
                             )}
                           </div>
                           <p>{position.description}</p>

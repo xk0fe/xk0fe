@@ -207,7 +207,7 @@
 }
 
 .features h2::before {
-  content: "▼▼▼ TODO REMOVE IT ▼▼▼";
+  content: "😎😎😎";
   display: block;
   font-size: 0.8rem;
   color: #fc8181;
