@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/xk0fe/static/css/main.9b12a47d.css",
-    "main.js": "/xk0fe/static/js/main.98923730.js",
+    "main.css": "/xk0fe/static/css/main.cc13d5c5.css",
+    "main.js": "/xk0fe/static/js/main.187d46b8.js",
     "static/js/453.195b869a.chunk.js": "/xk0fe/static/js/453.195b869a.chunk.js",
     "static/media/supertaphero_icon.png": "/xk0fe/static/media/supertaphero_icon.d33d513c2cec19f9e01f.png",
+    "static/media/doodes_icon.jpg": "/xk0fe/static/media/doodes_icon.5b130569c73617177948.jpg",
+    "static/media/idlefish_icon.jpg": "/xk0fe/static/media/idlefish_icon.53a929ea08f3b6079be7.jpg",
     "static/media/golfdaddy_logo.svg": "/xk0fe/static/media/golfdaddy_logo.2bb9d70a534506c48df584579b7ef400.svg",
+    "static/media/onestate_icon.webp": "/xk0fe/static/media/onestate_icon.8af5ccfcb4ef378e57ed.webp",
     "static/media/greenbuttongames_logo.svg": "/xk0fe/static/media/greenbuttongames_logo.7883c25e26f37b3d6c9c603b751a1f82.svg",
     "static/media/chillbase_logo.svg": "/xk0fe/static/media/chillbase_logo.9a9d38ebf3bfa4348609f2679c427306.svg",
     "static/media/zigzag_icon.webp": "/xk0fe/static/media/zigzag_icon.d021f8471ff7b7626f1d.webp",
     "index.html": "/xk0fe/index.html",
-    "main.9b12a47d.css.map": "/xk0fe/static/css/main.9b12a47d.css.map",
-    "main.98923730.js.map": "/xk0fe/static/js/main.98923730.js.map",
+    "main.cc13d5c5.css.map": "/xk0fe/static/css/main.cc13d5c5.css.map",
+    "main.187d46b8.js.map": "/xk0fe/static/js/main.187d46b8.js.map",
     "453.195b869a.chunk.js.map": "/xk0fe/static/js/453.195b869a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b12a47d.css",
-    "static/js/main.98923730.js"
+    "static/css/main.cc13d5c5.css",
+    "static/js/main.187d46b8.js"
   ]
 }
