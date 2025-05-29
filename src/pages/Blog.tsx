@@ -6,7 +6,6 @@ interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
-  author: string;
   readTime: string;
   category: string;
 }
@@ -18,7 +17,6 @@ const Blog: React.FC = () => {
       title: "Getting Started with React and TypeScript",
       excerpt: "Learn how to set up a modern React application with TypeScript, including best practices and common patterns.",
       date: "2024-01-15",
-      author: "John Doe",
       readTime: "5 min read",
       category: "React"
     },
@@ -27,7 +25,6 @@ const Blog: React.FC = () => {
       title: "Building Responsive Navigation Components",
       excerpt: "A comprehensive guide to creating flexible and accessible navigation components that work on all devices.",
       date: "2024-01-10",
-      author: "Jane Smith",
       readTime: "8 min read",
       category: "CSS"
     },
@@ -36,7 +33,6 @@ const Blog: React.FC = () => {
       title: "Modern JavaScript Features You Should Know",
       excerpt: "Explore the latest JavaScript features including async/await, destructuring, and arrow functions.",
       date: "2024-01-05",
-      author: "Mike Johnson",
       readTime: "6 min read",
       category: "JavaScript"
     },
@@ -45,7 +41,6 @@ const Blog: React.FC = () => {
       title: "Deploying React Apps to GitHub Pages",
       excerpt: "Step-by-step guide to deploying your React applications to GitHub Pages with automatic builds.",
       date: "2024-01-01",
-      author: "Sarah Wilson",
       readTime: "4 min read",
       category: "Deployment"
     }
@@ -81,7 +76,6 @@ const Blog: React.FC = () => {
                 <h2 className="blog-title">{post.title}</h2>
                 <p className="blog-excerpt">{post.excerpt}</p>
                 <div className="blog-meta">
-                  <span className="blog-author">By {post.author}</span>
                   <span className="blog-date">{formatDate(post.date)}</span>
                 </div>
                 <button className="blog-read-more">Read More</button>

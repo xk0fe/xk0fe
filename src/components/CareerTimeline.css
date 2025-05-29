@@ -543,12 +543,8 @@
 .project-icon-img {
   width: 32px;
   height: 32px;
-  border: 2px solid #e2e8f0;
   object-fit: cover;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  filter: contrast(1.2) brightness(1.05);
+  border-radius: 25%;
 }
 
 .project-name {
