@@ -8,25 +8,25 @@
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  cursor: url('./assets/images/cursor.svg') 0 0, auto !important;
+  /* cursor: url('./assets/images/cursor.svg') 0 0, auto !important; */
 }
 
 /* Pointer cursor for interactive elements */
-button, .btn, a, [role="button"], input[type="submit"], input[type="button"], 
+/* button, .btn, a, [role="button"], input[type="submit"], input[type="button"], 
 input[type="checkbox"], input[type="radio"], select, .clickable {
   cursor: url('./assets/images/cursor-pointer.svg') 12 6, pointer !important;
-}
+} */
 
 /* Text cursor for input fields */
-input[type="text"], input[type="email"], input[type="password"], 
+/* input[type="text"], input[type="email"], input[type="password"], 
 input[type="search"], input[type="url"], textarea, [contenteditable] {
-  cursor: text !important;
-}
+  cursor: url('./assets/images/cursor.svg') 0 0, auto !important;
+} */
 
 /* Ensure cursor shows on hover states */
-button:hover, .btn:hover, a:hover, [role="button"]:hover {
+/* button:hover, .btn:hover, a:hover, [role="button"]:hover {
   cursor: url('./assets/images/cursor-pointer.svg') 12 6, pointer !important;
-}
+} */
 
 body {
   font-family: 'Press Start 2P', monospace;
