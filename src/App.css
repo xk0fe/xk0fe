@@ -115,6 +115,24 @@ button, .btn {
   text-shadow: 1px 1px 0px #1a202c;
 }
 
+/* Punch scale animation for all buttons */
+button:active, .btn:active {
+  animation: buttonPunchScale 0.15s ease-out;
+  transform: translateY(1px) scale(0.95);
+}
+
+@keyframes buttonPunchScale {
+  0% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(2px) scale(0.9); 
+  }
+  100% { 
+    transform: translateY(1px) scale(0.95); 
+  }
+}
+
 .btn-primary {
   background: #68d391;
   color: #1a202c;
@@ -130,6 +148,24 @@ button, .btn {
     5px 5px 0px #1a202c;
 }
 
+/* Primary button punch animation */
+.btn-primary:active {
+  animation: buttonPunchScalePrimary 0.15s ease-out;
+  transform: translateY(-1px) scale(0.95);
+}
+
+@keyframes buttonPunchScalePrimary {
+  0% { 
+    transform: translateY(-2px) scale(1); 
+  }
+  50% { 
+    transform: translateY(0px) scale(0.9); 
+  }
+  100% { 
+    transform: translateY(-1px) scale(0.95); 
+  }
+}
+
 .btn-secondary {
   background: #81e6d9;
   color: #1a202c;
@@ -143,6 +179,24 @@ button, .btn {
     inset 2px 2px 0px rgba(255, 255, 255, 0.3),
     inset -2px -2px 0px rgba(0, 0, 0, 0.4),
     5px 5px 0px #1a202c;
+}
+
+/* Secondary button punch animation */
+.btn-secondary:active {
+  animation: buttonPunchScaleSecondary 0.15s ease-out;
+  transform: translateY(-1px) scale(0.95);
+}
+
+@keyframes buttonPunchScaleSecondary {
+  0% { 
+    transform: translateY(-2px) scale(1); 
+  }
+  50% { 
+    transform: translateY(0px) scale(0.9); 
+  }
+  100% { 
+    transform: translateY(-1px) scale(0.95); 
+  }
 }
 
 /* Link styles */
