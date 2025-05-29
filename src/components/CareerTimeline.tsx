@@ -39,7 +39,7 @@ const careerData: CompanyStep[] = [
         position: "Unity",
         duration: "2013 - 2019",
         description: "Developed multiple mobile games. Finished with an open source platformer game for the Android platform using Unity",
-        skills: ["C#", "JavaScript", "Unity", "Android", "Firebase", "Google Play Services", "Photon", "Version Control"],
+        skills: ["C#", "JavaScript", "Unity", "Android", "Firebase", "Google Play Services", "Photon", "Version Control", "Blender"],
         projects: [
           {
             name: "Super Tap Hero",
@@ -76,7 +76,7 @@ const careerData: CompanyStep[] = [
       {
         position: "Game Maker",
         duration: "2012 - 2017",
-        description: "Developed different games using Game Maker Studio, mostly RPG.",
+        description: "Developed different games using Game Maker 8 and Game Maker Studio, mostly RPG.",
         skills: ["GML", "Aseprite", "Adobe Photoshop"],
         projects: [
           {

@@ -60,7 +60,7 @@ const Blog: React.FC = () => {
       <div className="blog-header">
         <div className="container">
           <h1>Blog</h1>
-          <p>Thoughts, tutorials, and insights about web development</p>
+          <p>Thoughts, tutorials, and insights about game development</p>
         </div>
       </div>
 

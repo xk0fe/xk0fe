@@ -12,7 +12,7 @@ const Home: React.FC = () => {
           <img src={logo} className="hero-logo" alt="logo" />
           <h1>About me</h1>
           <p className="hero-description">
-            hey im k0fe and ive been making games for a long time now
+            hi im k0fe and ive been making games for a long time now
           </p>
           <div className="hero-actions">
             <a
