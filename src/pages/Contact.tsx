@@ -38,6 +38,13 @@ const Contact: React.FC = () => {
       const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+      // Debug logging (remove after fixing)
+      console.log('Environment check:', {
+        serviceId: serviceId ? 'SET' : 'MISSING',
+        templateId: templateId ? 'SET' : 'MISSING', 
+        publicKey: publicKey ? 'SET' : 'MISSING'
+      });
+
       if (!serviceId || !templateId || !publicKey) {
         console.error('EmailJS configuration missing. Please check environment variables.');
         throw new Error('EmailJS configuration missing');
