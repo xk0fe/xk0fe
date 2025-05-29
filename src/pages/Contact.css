@@ -13,8 +13,8 @@
     linear-gradient(-45deg, #2d3748 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, #2d3748 75%),
     linear-gradient(-45deg, transparent 75%, #2d3748 75%);
-  background-size: 25px 25px;
-  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+  background-size: 30px 30px;
+  background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
   background-color: #1a202c;
   padding: 6rem 2rem 4rem 2rem;
   text-align: center;
@@ -32,19 +32,13 @@
   bottom: 0;
   background: 
     repeating-linear-gradient(
-      90deg,
+      45deg,
       transparent,
-      transparent 3px,
-      rgba(214, 188, 250, 0.05) 3px,
-      rgba(214, 188, 250, 0.05) 6px
+      transparent 20px,
+      rgba(214, 188, 250, 0.03) 20px,
+      rgba(214, 188, 250, 0.03) 40px
     );
   pointer-events: none;
-  animation: scanlines 1.5s linear infinite;
-}
-
-@keyframes scanlines {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(6px); }
 }
 
 .contact-header::after {
@@ -524,7 +518,19 @@
 @media (max-width: 768px) {
   .contact-header {
     padding: 4rem 1rem 3rem 1rem;
-    background-size: 18px 18px;
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+  
+  .contact-header::before {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 15px,
+        rgba(214, 188, 250, 0.03) 15px,
+        rgba(214, 188, 250, 0.03) 30px
+      );
   }
   
   .contact-header h1 {

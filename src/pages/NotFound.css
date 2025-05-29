@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.not-found {
+  min-height: 100vh;
+  background: 
+    linear-gradient(45deg, #2d3748 25%, transparent 25%),
+    linear-gradient(-45deg, #2d3748 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #2d3748 75%),
+    linear-gradient(-45deg, transparent 75%, #2d3748 75%);
+  background-size: 30px 30px;
+  background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+  background-color: #1a202c;
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(252, 129, 129, 0.05) 20px,
+      rgba(252, 129, 129, 0.05) 40px
+    );
+  pointer-events: none;
+}
+
+.not-found::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: 
+    repeating-linear-gradient(
+      to right,
+      #fc8181 0px,
+      #fc8181 12px,
+      #fbd38d 12px,
+      #fbd38d 24px,
+      #68d391 24px,
+      #68d391 36px,
+      #81e6d9 36px,
+      #81e6d9 48px
+    );
+  animation: errorRainbow 3s ease-in-out infinite;
+}
+
+@keyframes errorRainbow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.not-found-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.not-found-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.error-code {
+  font-size: 8rem;
+  color: #fc8181;
+  text-shadow: 
+    6px 6px 0px #1a202c,
+    12px 12px 0px #2d3748;
+  animation: errorPulse 2s ease-in-out infinite alternate;
+  line-height: 1;
+  margin: 0;
+}
+
+@keyframes errorPulse {
+  from { 
+    text-shadow: 
+      6px 6px 0px #1a202c,
+      12px 12px 0px #2d3748;
+    transform: scale(1);
+  }
+  to { 
+    text-shadow: 
+      6px 6px 0px #1a202c,
+      12px 12px 0px #2d3748,
+      0px 0px 30px #fc8181;
+    transform: scale(1.05);
+  }
+}
+
+.error-message h2 {
+  font-size: 1.5rem;
+  color: #fbd38d;
+  margin-bottom: 1rem;
+  text-shadow: 
+    3px 3px 0px #1a202c,
+    6px 6px 0px #2d3748;
+  animation: blinkText 2s infinite;
+}
+
+@keyframes blinkText {
+  0%, 70% { opacity: 1; }
+  71%, 100% { opacity: 0.3; }
+}
+
+.error-message p {
+  font-size: 0.8rem;
+  color: #81e6d9;
+  text-shadow: 2px 2px 0px #1a202c;
+  line-height: 1.6;
+}
+
+.not-found-body {
+  background: rgba(45, 55, 72, 0.8);
+  border: 4px solid #fc8181;
+  border-radius: 0;
+  padding: 3rem;
+  box-shadow: 
+    inset 4px 4px 0px rgba(255, 255, 255, 0.1),
+    inset -4px -4px 0px rgba(0, 0, 0, 0.3),
+    8px 8px 0px #1a202c;
+  position: relative;
+}
+
+.not-found-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      rgba(252, 129, 129, 0.1) 4px,
+      rgba(252, 129, 129, 0.1) 8px
+    );
+  pointer-events: none;
+}
+
+.error-details {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.pixel-art {
+  flex-shrink: 0;
+}
+
+.pixel-ghost {
+  font-size: 2rem;
+  color: #68d391;
+  text-align: center;
+  animation: ghostFloat 3s ease-in-out infinite;
+}
+
+@keyframes ghostFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.ghost-body {
+  background: rgba(104, 211, 145, 0.2);
+  border: 3px solid #68d391;
+  padding: 1rem 2rem;
+  position: relative;
+  box-shadow: 
+    inset 2px 2px 0px rgba(255, 255, 255, 0.1),
+    3px 3px 0px #1a202c;
+}
+
+.ghost-eyes {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  animation: ghostBlink 4s infinite;
+}
+
+@keyframes ghostBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+.ghost-mouth {
+  font-size: 1rem;
+  color: #1a202c;
+}
+
+.ghost-tail {
+  color: #68d391;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  animation: ghostTail 2s ease-in-out infinite;
+}
+
+@keyframes ghostTail {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.2); }
+}
+
+.error-text {
+  flex: 1;
+}
+
+.error-text h3 {
+  font-size: 1.2rem;
+  color: #fbd38d;
+  margin-bottom: 1.5rem;
+  text-shadow: 
+    2px 2px 0px #1a202c,
+    4px 4px 0px #2d3748;
+}
+
+.error-text p {
+  font-size: 0.7rem;
+  color: #68d391;
+  line-height: 1.8;
+  text-shadow: 1px 1px 0px #1a202c;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.not-found-actions .btn {
+  font-size: 0.7rem;
+  padding: 16px 24px;
+  border-width: 4px;
+  box-shadow: 
+    inset 3px 3px 0px rgba(255, 255, 255, 0.2),
+    inset -3px -3px 0px rgba(0, 0, 0, 0.3),
+    6px 6px 0px #1a202c;
+  animation: buttonBounce 4s ease-in-out infinite;
+  position: relative;
+}
+
+.not-found-actions .btn:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.not-found-actions .btn:nth-child(2) {
+  animation-delay: 2s;
+}
+
+@keyframes buttonBounce {
+  0%, 50%, 100% { transform: translateY(0px); }
+  25% { transform: translateY(-5px); }
+}
+
+.not-found-actions .btn:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .not-found-content {
+    padding: 1rem;
+  }
+  
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-message h2 {
+    font-size: 1rem;
+  }
+  
+  .error-message p {
+    font-size: 0.6rem;
+  }
+  
+  .not-found-body {
+    padding: 2rem 1rem;
+  }
+  
+  .error-details {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .error-text h3 {
+    font-size: 0.9rem;
+  }
+  
+  .error-text p {
+    font-size: 0.6rem;
+  }
+  
+  .not-found-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .not-found-actions .btn {
+    font-size: 0.6rem;
+    padding: 12px 20px;
+  }
+} 

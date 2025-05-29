@@ -15,14 +15,13 @@ const Home: React.FC = () => {
             hi im k0fe and ive been making games for a long time now
           </p>
           <div className="hero-actions">
-            <a
+            <button
               className="btn btn-primary"
-              // href="https://reactjs.org"
-              // target="_blank"
-              // rel="noopener noreferrer"
+              disabled
+              aria-label="Projects coming soon"
             >
               Projects (soon)
-            </a>
+            </button>
             <Link
               className="btn btn-secondary"
               to="/blog"

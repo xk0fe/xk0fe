@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>k0fe - Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Press Start 2P', monospace;
+        background: 
+          linear-gradient(45deg, #2d3748 25%, transparent 25%),
+          linear-gradient(-45deg, #2d3748 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #2d3748 75%),
+          linear-gradient(-45deg, transparent 75%, #2d3748 75%);
+        background-size: 30px 30px;
+        background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+        background-color: #1a202c;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #68d391;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(104, 211, 145, 0.03) 20px,
+            rgba(104, 211, 145, 0.03) 40px
+          );
+        pointer-events: none;
+      }
+
+      body::after {
+        content: '';
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: 
+          repeating-linear-gradient(
+            to right,
+            #68d391 0px,
+            #68d391 12px,
+            #81e6d9 12px,
+            #81e6d9 24px,
+            #fbd38d 24px,
+            #fbd38d 36px,
+            #fc8181 36px,
+            #fc8181 48px
+          );
+        animation: rainbow 4s ease-in-out infinite;
+      }
+
+      @keyframes rainbow {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+
+      .container {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        color: #fc8181;
+        margin-bottom: 1rem;
+        text-shadow: 
+          3px 3px 0px #1a202c,
+          6px 6px 0px #2d3748;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from { 
+          text-shadow: 
+            3px 3px 0px #1a202c,
+            6px 6px 0px #2d3748;
+        }
+        to { 
+          text-shadow: 
+            3px 3px 0px #1a202c,
+            6px 6px 0px #2d3748,
+            0px 0px 20px #fc8181;
+        }
+      }
+
+      .message {
+        font-size: 0.8rem;
+        color: #fbd38d;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        text-shadow: 2px 2px 0px #1a202c;
+        background: rgba(45, 55, 72, 0.7);
+        padding: 1.5rem;
+        border: 3px solid #81e6d9;
+        border-radius: 0;
+        box-shadow: 
+          inset 3px 3px 0px rgba(255, 255, 255, 0.1),
+          inset -3px -3px 0px rgba(0, 0, 0, 0.3),
+          6px 6px 0px #1a202c;
+      }
+
+      .loading-container {
+        margin-top: 2rem;
+      }
+
+      .loading-dots {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 20px;
+      }
+
+      .loading-dots div {
+        position: absolute;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 0;
+        background: #68d391;
+        animation: loading 1.2s linear infinite;
+        box-shadow: 2px 2px 0px #1a202c;
+      }
+
+      .loading-dots div:nth-child(1) { left: 8px; animation-delay: 0s; }
+      .loading-dots div:nth-child(2) { left: 32px; animation-delay: -0.4s; }
+      .loading-dots div:nth-child(3) { left: 56px; animation-delay: -0.8s; }
+
+      @keyframes loading {
+        0%, 40%, 100% { 
+          opacity: 1;
+          transform: scale(1);
+        }
+        20% { 
+          opacity: 0.3;
+          transform: scale(0.8);
+        }
+      }
+
+      .redirect-text {
+        font-size: 0.6rem;
+        color: #81e6d9;
+        margin-top: 1rem;
+        text-shadow: 1px 1px 0px #1a202c;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+        
+        h1 {
+          font-size: 1.5rem;
+        }
+        
+        .message {
+          font-size: 0.7rem;
+          padding: 1rem;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with just a query string and hash fragment,
+      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      // If you're creating a Project Pages site and NOT using a custom domain,
+      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
+      // This way the code will only replace the route part and not the real directory.
+      // For example: https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
+      // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
+      // Otherwise, leave pathSegmentsToKeep as 0.
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Beep Beep!</h1>
+      <div class="message">
+        Redirecting you to the right dimension...
+        <br><br>
+        The requested page is being teleported to its proper location in the k0fe universe!
+      </div>
+      <div class="loading-container">
+        <div class="loading-dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="redirect-text">
+        Please wait while we fix the spacetime continuum...
+      </div>
+    </div>
+  </body>
+</html> 
