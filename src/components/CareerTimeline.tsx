@@ -36,6 +36,20 @@ const careerData: CompanyStep[] = [
     logoKey: "greenButtonGames",
     positions: [
       {
+          position: "Unity Lead Game Developer",
+          duration: "2020 - 2021",
+          description: "Progressed to more complex projects, took on mentoring responsibilities and improved game monetization systems.",
+          skills: ["Team Leadership", "Mentoring", "Game Analytics", "Monetization Systems"],
+          projects: [
+              {
+                  name: "Idle Fish tycoon",
+                  icon: "https://play-lh.googleusercontent.com/lR4mfEI50hA2WQmKtI347YypAxc-JyGfj7IQLy78XHbA5ZOUB2BkhZUnnJLy5Z4FDg=s48-rw",
+                  link: "https://play.google.com/store/apps/details?id=com.greenbuttongames.FishIdle&hl=en_US&gl=US",
+                  description: "Hybrid casual game with idle and tycoon elements"
+              }
+          ]
+      },
+      {
         position: "Unity Game Developer",
         duration: "2019 - 2020",
         description: "Started my journey in game development, working on mobile games and learning the fundamentals.",
@@ -47,20 +61,6 @@ const careerData: CompanyStep[] = [
             link: "https://example.com/runner-adventure",
             description: "Endless runner with power-ups and challenges"
           }
-        ]
-      },
-      {
-        position: "Unity Lead Game Developer",
-        duration: "2020 - 2021",
-        description: "Progressed to more complex projects, took on mentoring responsibilities and improved game monetization systems.",
-        skills: ["Team Leadership", "Mentoring", "Game Analytics", "Monetization Systems"],
-        projects: [
-            {
-                name: "Idle Fish tycoon",
-                icon: "https://play-lh.googleusercontent.com/lR4mfEI50hA2WQmKtI347YypAxc-JyGfj7IQLy78XHbA5ZOUB2BkhZUnnJLy5Z4FDg=s48-rw",
-                link: "https://play.google.com/store/apps/details?id=com.greenbuttongames.FishIdle&hl=en_US&gl=US",
-                description: "Hybrid casual game with idle and tycoon elements"
-            }
         ]
       }
     ]
@@ -115,7 +115,7 @@ const careerData: CompanyStep[] = [
         position: "Unity Developer",
         duration: "2024 - Present",
         description: "Leading development teams and architecting scalable game systems for AAA projects.",
-        skills: ["React Native", "TypeScript", "AR"]
+        skills: ["Unity", "C#", "React Native", "TypeScript", "AR"]
       }
     ]
   }
@@ -155,10 +155,10 @@ const CareerTimeline: React.FC = () => {
   return (
     <section className="career-timeline">
       <div className="container">
-        <h2>My Career Journey</h2>
+        <h2>Experience</h2>
         <div className="timeline">
           <div className="timeline-line"></div>
-          {careerData.map((company, index) => {
+          {[...careerData].reverse().map((company, index) => {
             const stepSide = getStepSide(index);
             const hasMultiplePositions = company.positions.length > 1;
             
