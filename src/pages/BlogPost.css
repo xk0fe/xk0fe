@@ -1,0 +1,371 @@
+.blog-post {
+  min-height: 100vh;
+  background: #1a202c;
+  color: #e2e8f0;
+  padding: 80px 20px 40px;
+  position: relative;
+}
+
+.blog-post::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 48%,
+    rgba(104, 211, 145, 0.05) 49%,
+    rgba(104, 211, 145, 0.05) 51%,
+    transparent 52%
+  );
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.blog-post .container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.post-article {
+  background: #2d3748;
+  border: 3px solid #4a5568;
+  padding: 32px;
+  box-shadow: 4px 4px 0px #1a202c;
+  position: relative;
+}
+
+.post-article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 48%,
+    rgba(104, 211, 145, 0.1) 49%,
+    rgba(104, 211, 145, 0.1) 51%,
+    transparent 52%
+  );
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.post-article > * {
+  position: relative;
+  z-index: 2;
+}
+
+.post-article-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #4a5568;
+}
+
+.back-to-blog {
+  display: inline-block;
+  color: #68d391;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border: 2px solid #68d391;
+  background: transparent;
+  transition: all 0.2s ease;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.back-to-blog:hover {
+  background: #68d391;
+  color: #1a202c;
+  box-shadow: 2px 2px 0px #4a5568;
+  transform: translate(-1px, -1px);
+}
+
+.post-article-title {
+  font-size: 28px;
+  color: #68d391;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.post-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #a0aec0;
+  margin-bottom: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.post-separator {
+  color: #4a5568;
+}
+
+.post-article-date {
+  color: #fbd38d;
+}
+
+.post-article-time {
+  color: #fc8181;
+}
+
+.post-article-category {
+  color: #d6bcfa;
+  padding: 4px 8px;
+  background: rgba(214, 188, 250, 0.2);
+  border: 1px solid #d6bcfa;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+.post-article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #81e6d9;
+  background: rgba(129, 230, 217, 0.1);
+  border: 1px solid #81e6d9;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+.tag:hover {
+  background: rgba(129, 230, 217, 0.2);
+  box-shadow: 0 0 4px rgba(129, 230, 217, 0.3);
+}
+
+/* Markdown Content Styles */
+.post-article-content {
+  line-height: 1.7;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.post-article-content h1,
+.post-article-content h2,
+.post-article-content h3,
+.post-article-content h4,
+.post-article-content h5,
+.post-article-content h6 {
+  color: #68d391;
+  margin: 32px 0 16px 0;
+  line-height: 1.3;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.post-article-content h1 {
+  font-size: 24px;
+  border-bottom: 2px solid #4a5568;
+  padding-bottom: 8px;
+}
+
+.post-article-content h2 {
+  font-size: 20px;
+}
+
+.post-article-content h3 {
+  font-size: 18px;
+  color: #81e6d9;
+}
+
+.post-article-content h4 {
+  font-size: 16px;
+  color: #fbd38d;
+}
+
+.post-article-content p {
+  margin: 20px 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.post-article-content a {
+  color: #81e6d9;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+
+.post-article-content a:hover {
+  color: #68d391;
+  text-shadow: 0 0 4px rgba(104, 211, 145, 0.3);
+}
+
+.post-article-content ul,
+.post-article-content ol {
+  margin: 20px 0;
+  padding-left: 28px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.post-article-content li {
+  margin: 12px 0;
+  color: #cbd5e0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.post-article-content blockquote {
+  background: rgba(129, 230, 217, 0.1);
+  border-left: 4px solid #81e6d9;
+  margin: 24px 0;
+  padding: 20px 24px;
+  font-style: italic;
+  color: #81e6d9;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.post-article-content pre {
+  background: #1a202c;
+  border: 2px solid #4a5568;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 24px 0;
+  box-shadow: 2px 2px 0px #2d3748;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+}
+
+.post-article-content code {
+  background: #1a202c;
+  color: #68d391;
+  padding: 3px 8px;
+  border: 1px solid #4a5568;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.post-article-content pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #e2e8f0;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.post-article-content strong {
+  color: #fbd38d;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.post-article-content em {
+  color: #fc8181;
+  font-style: italic;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.post-article-content hr {
+  border: none;
+  border-top: 2px solid #4a5568;
+  margin: 32px 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 80px 16px 40px;
+  }
+
+  .blog-post::before {
+    background-size: 15px 15px;
+  }
+
+  .post-article {
+    padding: 20px;
+    box-shadow: 2px 2px 0px #1a202c;
+  }
+
+  .post-article::before {
+    background-size: 15px 15px;
+  }
+
+  .post-article-title {
+    font-size: 18px;
+  }
+
+  .post-article-meta {
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+
+  .post-article-content {
+    font-size: 14px;
+  }
+
+  .post-article-content h1 {
+    font-size: 16px;
+  }
+
+  .post-article-content h2 {
+    font-size: 14px;
+  }
+
+  .post-article-content h3 {
+    font-size: 12px;
+  }
+
+  .post-article-content p {
+    font-size: 14px;
+  }
+
+  .post-article-content li {
+    font-size: 14px;
+  }
+
+  .post-article-content blockquote {
+    font-size: 14px;
+  }
+
+  .post-article-content pre {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .post-article-content code {
+    font-size: 12px;
+  }
+
+  .post-article-content pre code {
+    font-size: 12px;
+  }
+
+  .back-to-blog {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .post-article-category {
+    font-size: 8px;
+  }
+
+  .tag {
+    font-size: 8px;
+  }
+} 

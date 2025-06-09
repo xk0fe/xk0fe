@@ -11,6 +11,9 @@
 # production
 /build
 
+# auto-generated files
+/src/data/blogPosts.ts
+
 # misc
 .DS_Store
 .env.local

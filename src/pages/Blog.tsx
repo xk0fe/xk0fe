@@ -1,88 +1,153 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getAllPosts, getAllCategories, getAllTags, BlogPost } from '../utils/blogUtils';
+import BlogPostCard from '../components/BlogPostCard';
 import './Blog.css';
 
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  category: string;
-}
-
 const Blog: React.FC = () => {
-  const blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "Getting Started with React and TypeScript",
-      excerpt: "Learn how to set up a modern React application with TypeScript, including best practices and common patterns.",
-      date: "2024-01-15",
-      readTime: "5 min read",
-      category: "React"
-    },
-    {
-      id: 2,
-      title: "Building Responsive Navigation Components",
-      excerpt: "A comprehensive guide to creating flexible and accessible navigation components that work on all devices.",
-      date: "2024-01-10",
-      readTime: "8 min read",
-      category: "CSS"
-    },
-    {
-      id: 3,
-      title: "Modern JavaScript Features You Should Know",
-      excerpt: "Explore the latest JavaScript features including async/await, destructuring, and arrow functions.",
-      date: "2024-01-05",
-      readTime: "6 min read",
-      category: "JavaScript"
-    },
-    {
-      id: 4,
-      title: "Deploying React Apps to GitHub Pages",
-      excerpt: "Step-by-step guide to deploying your React applications to GitHub Pages with automatic builds.",
-      date: "2024-01-01",
-      readTime: "4 min read",
-      category: "Deployment"
-    }
-  ];
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [selectedTag, setSelectedTag] = useState<string>('');
+  const [categories, setCategories] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
 
-  const formatDate = (dateString: string): string => {
-    const options: Intl.DateTimeFormatOptions = { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+  useEffect(() => {
+    const allPosts = getAllPosts();
+    const allCategories = getAllCategories();
+    const allTags = getAllTags();
+    
+    setPosts(allPosts);
+    setFilteredPosts(allPosts);
+    setCategories(allCategories);
+    setTags(allTags);
+  }, []);
+
+  useEffect(() => {
+    let filtered = posts;
+
+    if (selectedCategory) {
+      filtered = filtered.filter(post => 
+        post.category.toLowerCase() === selectedCategory.toLowerCase()
+      );
+    }
+
+    if (selectedTag) {
+      filtered = filtered.filter(post =>
+        post.tags.some(tag => tag.toLowerCase() === selectedTag.toLowerCase())
+      );
+    }
+
+    setFilteredPosts(filtered);
+  }, [posts, selectedCategory, selectedTag]);
+
+  const handleCategoryFilter = (category: string) => {
+    setSelectedCategory(category === selectedCategory ? '' : category);
+    setSelectedTag(''); // Clear tag filter when category changes
+  };
+
+  const handleTagFilter = (tag: string) => {
+    setSelectedTag(tag === selectedTag ? '' : tag);
+    setSelectedCategory(''); // Clear category filter when tag changes
+  };
+
+  const clearFilters = () => {
+    setSelectedCategory('');
+    setSelectedTag('');
   };
 
   return (
     <div className="blog">
-      <div className="blog-header">
-        <div className="container">
-          <h1>Blog</h1>
-          <p>Thoughts, tutorials, and insights about game development</p>
-        </div>
-      </div>
+      <div className="container">
+        <header className="blog-header">
+          <h1 className="blog-title">
+            <span className="cursor-blink">▐</span> Blog
+          </h1>
+          <p className="blog-subtitle">
+            Game development insights, tutorials, and my journey as an indie developer
+          </p>
+        </header>
 
-      <div className="blog-content">
-        <div className="container">
-          <div className="blog-grid">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="blog-card">
-                <div className="blog-card-header">
-                  <span className="blog-category">{post.category}</span>
-                  <span className="blog-read-time">{post.readTime}</span>
-                </div>
-                <h2 className="blog-title">{post.title}</h2>
-                <p className="blog-excerpt">{post.excerpt}</p>
-                <div className="blog-meta">
-                  <span className="blog-date">{formatDate(post.date)}</span>
-                </div>
-                <button className="blog-read-more">Read More</button>
-              </article>
-            ))}
+        {/* Filters Section */}
+        <div className="blog-filters">
+          <div className="filter-section">
+            <h3>Categories</h3>
+            <div className="filter-buttons">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+                  onClick={() => handleCategoryFilter(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
+
+          <div className="filter-section">
+            <h3>Tags</h3>
+            <div className="filter-buttons">
+              {tags.map(tag => (
+                <button
+                  key={tag}
+                  className={`filter-btn tag-btn ${selectedTag === tag ? 'active' : ''}`}
+                  onClick={() => handleTagFilter(tag)}
+                >
+                  #{tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {(selectedCategory || selectedTag) && (
+            <div className="filter-section">
+              <button className="clear-filters-btn" onClick={clearFilters}>
+                Clear Filters ✕
+              </button>
+            </div>
+          )}
         </div>
+
+        {/* Posts Section */}
+        <div className="blog-content">
+          {filteredPosts.length === 0 && posts.length > 0 ? (
+            <div className="no-posts">
+              <h2>No posts found</h2>
+              <p>Try adjusting your filters or check back later for new content!</p>
+            </div>
+          ) : filteredPosts.length === 0 ? (
+            <div className="no-posts">
+              <h2>Coming Soon!</h2>
+              <p>Blog posts are being loaded. Check back soon for game development insights and tutorials!</p>
+            </div>
+          ) : (
+            <div className="posts-grid">
+              {filteredPosts.map((post, index) => (
+                <BlogPostCard key={post.slug} post={post} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Stats */}
+        {posts.length > 0 && (
+          <div className="blog-stats">
+            <div className="stat">
+              <span className="stat-number">{filteredPosts.length}</span>
+              <span className="stat-label">
+                {filteredPosts.length === 1 ? 'Post' : 'Posts'} Shown
+              </span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">{posts.length}</span>
+              <span className="stat-label">Total Posts</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">{categories.length}</span>
+              <span className="stat-label">Categories</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

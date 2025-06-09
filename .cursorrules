@@ -1,0 +1,68 @@
+// Prefer functional components
+const preferFunctionalComponents = true;
+
+// Code style
+const codeStyle = [
+  "Comments in English only",
+  "Prefer functional programming over OOP",
+  "Use separate OOP classes only for connectors and interfaces to external systems", 
+  "Write all other logic with pure functions (clear input/output, no hidden state changes)",
+  "Functions must ONLY modify their return values - never modify input parameters, global state, or any data not explicitly returned",
+  "Make minimal, focused changes",
+  "Follow DRY, KISS, and YAGNI principles",
+  "Use strict typing (function returns, variables) in all languages",
+  "Use named parameters in function calls when possible",
+  "No duplicate code; check if some logic is already written before writing it",
+  "Avoid unnecessary wrapper functions without clear purpose",
+  "Prefer strongly-typed collections over generic ones when dealing with complex data structures",
+  "Consider creating proper type definitions for non-trivial data structures",
+  "Native types are fine for simple data structures, but use proper models for complex ones",
+  "Try to avoid using untyped variables and generic types where possible",
+  "Minimize use of default parameter values - prefer explicit parameters when possible"
+];
+
+// Code changes
+const codeChanges = [
+  "You MUST respect existing code style and patterns if the user didn't specify otherwise",
+  "You MUST suggest only minimal changes related to current user dialog",
+  "You MUST change as few lines as possible while solving the problem",
+  "You MUST focus only on what the user is asking for in the current dialog, no extra improvements",
+  "You MUST understand the existing codebase before suggesting changes",
+  "You MUST start with reading related files and codebase before suggesting changes"
+];
+
+// TypeScript React best practices
+const typescriptReactBestPractices = [
+  "Use standard functional component syntax instead of React.FC",
+  "Utilize useState and useEffect hooks for state and side effects",
+  "Prefer events and callbacks over useEffect for cleaner code when possible",
+  "Implement proper TypeScript interfaces for props and state", 
+  "Use React.memo for performance optimization when needed",
+  "Implement custom hooks for reusable logic",
+  "Utilize TypeScript's strict mode",
+  "Prefer interfaces over type aliases for complex object shapes",
+  "Use typed objects for complex state management"
+];
+
+// Folder structure
+const folderStructure = `
+src/
+  components/
+  hooks/
+  pages/
+  types/
+  utils/
+  App.tsx
+  index.tsx
+`;
+
+// Additional instructions
+const additionalInstructions = [
+  "Use .tsx extension for files with JSX",
+  "Implement strict TypeScript checks",
+  "Utilize React.lazy and Suspense for code-splitting",
+  "Use type inference where possible",
+  "Implement error boundaries for robust error handling", 
+  "Follow React and TypeScript best practices and naming conventions",
+  "Use ESLint with TypeScript and React plugins for code quality"
+];

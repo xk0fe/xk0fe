@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import './App.css';
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<NotFound />} />

@@ -2,6 +2,47 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Blog System
+
+This website includes a dynamic blog system that reads from markdown files.
+
+### Adding New Blog Posts
+
+1. Create a new `.md` file in `src/posts/`
+2. Add frontmatter with required fields:
+
+```markdown
+---
+title: "Your Post Title"
+description: "Brief description of the post"
+date: "2024-12-15"
+category: "Game Development"
+timeToRead: "5 min read"
+tags: ["Tag1", "Tag2", "Tag3"]
+slug: "your-post-slug"
+---
+
+# Your Post Title
+
+Your markdown content goes here...
+```
+
+3. Run `npm run generate-blog-data` to update the blog data
+4. Your post will be available at `/blog/your-post-slug`
+
+### Blog Post Structure
+
+- **Frontmatter**: YAML metadata at the top of each `.md` file
+- **Content**: Standard markdown with support for code blocks, links, images
+- **Images**: Place in `src/assets/images/` and reference with relative paths
+
+### Build Process
+
+The blog system uses a build-time generation approach:
+- Markdown files in `src/posts/` are the source of truth
+- `scripts/generate-blog-data.js` reads these files and generates `src/data/blogPosts.ts`
+- The generated file is automatically created during the build process
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -22,12 +63,19 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+**Note**: This automatically runs `npm run generate-blog-data` first to ensure blog posts are up to date.
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run generate-blog-data`
+
+Reads all markdown files from `src/posts/` and generates `src/data/blogPosts.ts` with the blog post data.\
+Run this after adding or modifying blog posts in development.
 
 ### `npm run eject`
 

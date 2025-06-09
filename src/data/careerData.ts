@@ -73,7 +73,7 @@ export const careerData: CompanyStep[] = [
       {
         position: "Game Maker",
         duration: "2012 - 2017",
-        description: "Developed different games using Game Maker 8 and Game Maker Studio, mostly RPG.",
+        description: "Developed different games using Game Maker 8 and Game Maker Studio, mostly RPG",
         skills: ["GML", "Aseprite", "Adobe Photoshop"],
         projects: [
           {
@@ -93,7 +93,7 @@ export const careerData: CompanyStep[] = [
       {
         position: "RPG Maker 2003 && VX Ace",
         duration: "2015 - 2016",
-        description: "Developed a clone of the game Final Fantasy I. Participated in a game jam themed as 'Bad Box Art'.",
+        description: "Developed a clone of the game Final Fantasy I. Participated in a game jam themed as 'Bad Box Art'",
         skills: ["Ruby", "Aseprite"],
         projects: [
           {
@@ -113,7 +113,7 @@ export const careerData: CompanyStep[] = [
       {
         position: "Ren'Py",
         duration: "2014 - 2015",
-        description: "Developed a life simulator game where player starts as a homeless person and needs to survive on the streets.",
+        description: "Developed a life simulator game where player starts as a homeless person and needs to survive on the streets",
         skills: ["Adobe Photoshop", "articy:draft", "Python"],
         projects: [
           {
@@ -125,9 +125,15 @@ export const careerData: CompanyStep[] = [
         ]
       },
       {
+        position: "Cube 2: Sauerbraten",
+        duration: "2010-2012",
+        description: "Making levels, modifying the engine, making mods",
+        skills: ["Adobe Photoshop", "Level Design", "C++"],
+      },
+      {
         position: "Raycasting Game Maker",
         duration: "2010",
-        description: "Developed my first game using a game editor.",
+        description: "Developed my first game using a game editor",
         skills: ["Adobe Photoshop", "Level Design"],
         projects: [
           {
