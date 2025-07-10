@@ -17,7 +17,9 @@
 
 
 # My open source games
-- [Golf Brawl](https://github.com/xk0fe/GolfBrawl)
+- ⛳ [Golf Brawl](https://github.com/xk0fe/GolfBrawl) 
+- 🏃‍➡️ [Super Tap Hero](https://github.com/xk0fe/Super-Tap-Hero) 
+- 🪖 [RoomOfTankz](https://github.com/xk0fe/RoomOfTankz) 
 
 <!--
 **xk0fe/xk0fe** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
