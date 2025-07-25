@@ -35,3 +35,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+# My contributions
+- [SS3D](https://github.com/RE-SS3D/SS3D) - C# Unity Space Station 3D game - [PRs](https://github.com/RE-SS3D/SS3D/commits?author=xk0fe) 
+- [Radon IDE](https://github.com/software-mansion/radon-ide) - TypeScript VSCode extension for React Native development - [PR](https://github.com/software-mansion/radon-ide/pull/1266)
+- [Facebook SDK for Unity](https://github.com/facebook/facebook-sdk-for-unity) - [PR](https://github.com/facebook/facebook-sdk-for-unity/pull/479)
+- [Morpeh](https://github.com/scellecs/morpeh) - C# ECS framework - [PRs](https://github.com/scellecs/morpeh/commits?author=xk0fe) | [PRs](https://github.com/scellecs/morpeh/commits?author=mininaleksandr)
